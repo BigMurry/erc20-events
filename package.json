@@ -1,0 +1,17 @@
+{
+  "name": "erc20-events",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:BigMurry/erc20-events.git",
+  "author": "BigMurry <hhdiao@siom.ac.cn>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "ethers": "^4.0.39",
+    "lodash": "^4.17.15",
+    "traverse": "^0.6.6"
+  }
+}
