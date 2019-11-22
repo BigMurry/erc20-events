@@ -9,9 +9,16 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@ledgerhq/hw-app-eth": "^4.74.2",
+    "@ledgerhq/hw-transport-node-hid": "^4.74.2",
     "bignumber.js": "^9.0.0",
+    "ethereumjs-tx": "^2.1.1",
     "ethers": "^4.0.39",
     "lodash": "^4.17.15",
+    "regenerator-runtime": "^0.13.3",
     "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "xhstandard": "^2.0.0"
   }
 }
