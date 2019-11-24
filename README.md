@@ -5,4 +5,13 @@ demo project for fetch erc20 events
 1. clone this project
 2. set `PROVIDER_URL` in `index.js`
 3. `yarn` or `npm install`
-4. `yarn start` or `npm start`
+
+# ERC-20 events watch
+```
+node index.js
+```
+
+# ERC-20 ledger hardware wallet transfer
+```
+node transfer-erc20.js
+```

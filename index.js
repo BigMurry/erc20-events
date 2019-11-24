@@ -40,8 +40,8 @@ const USDT_CONF = {
 };
 
 function eventNameToTopic(abi, eventName) {
-  const interface = new ethers.utils.Interface(abi);
-  const evt = interface.events[eventName];
+  const inter = new ethers.utils.Interface(abi);
+  const evt = inter.events[eventName];
   return _.get(evt, ['topic']);
 }
 
@@ -88,7 +88,7 @@ async function getLog(fromBlock, toBlock) {
   // filter and parse the logs to events
   const filterTopics = [transferEventTopic];
   const transferEvents = logs.filter(log => {
-    return log && log.topics && _.intersection(log.topics, filterTopics).length > 0 // filter the transfer events only
+    return log && log.topics && _.intersection(log.topics, filterTopics).length > 0; // filter the transfer events only
   }).map(log => {
     const evt = usdtContractInstance.interface.parseLog(log);
     const usdPrecision = 1e6;
