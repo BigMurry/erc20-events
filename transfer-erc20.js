@@ -79,22 +79,16 @@ function getRawTx(to, usdtAmount, nonce, gasGwei, chainId = 1) { // default main
   return {rawTx, txHex};
 }
 
-async function transfer() {
-  const chainId = 4; // rinkeby
-  const keyPath = "44'/60'/0'/0/0"; // ledger wallet key path
+async function transfer(fromKeyPath, to, usdtAmount, gasGwei, chainId) {
   const provider = ethers.getDefaultProvider(NETWORKS[chainId]); // infura public provider
   // const provider = new ethers.providers.JsonRpcProvider(PROVIDER_URL); // or pass provider custom URL here
-
   const transport = await TransportNodeHid.create();
   // console.log(transport);
 
   const eth = new Eth(transport);
-  const {address: from} = await eth.getAddress(keyPath);
+  const {address: from} = await eth.getAddress(fromKeyPath);
   console.log(`from: ${from}`);
 
-  const to = '0x2A0d2127173809f4E63517D71e8083Fe6a1410eD';
-  const usdtAmount = 10; // 10 usdt
-  const gasGwei = 10; // 10gwei gas price
   const nonce = await provider.getTransactionCount(from);
   const {rawTx, txHex} = getRawTx(
     to,
@@ -122,4 +116,16 @@ async function transfer() {
   return reciept;
 }
 
-transfer().then(tx => console.log(tx)).catch(e => console.log(e));
+const keyPath = "44'/60'/0'/0/0"; // ledger wallet key path
+const to = '0x2A0d2127173809f4E63517D71e8083Fe6a1410eD';
+const usdtAmount = 10; // 10 usd
+const gasGwei = 10; // 10gwei gas price
+const chainId = 4; // rinkeby
+
+transfer(
+  keyPath,
+  to,
+  usdtAmount,
+  gasGwei,
+  chainId
+).then(tx => console.log(tx)).catch(e => console.log(e));
