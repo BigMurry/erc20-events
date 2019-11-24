@@ -33,7 +33,7 @@ const USDT_CONF = {
       'address': '0x7A434FBdAca6D9Bee580FE2c285c9859BC63FB67'
     },
     '4': { // rinkeby poa testnet
-      'block': 5472000, // initial block number for rinkebby ropsten testnet
+      'block': 5472000, // initial block number for rinkebby testnet
       'address': '0x7cc3489C1A2887991D443B05a44A2f260998AdaD'
     },
     '5': { // goerli poa testnet
