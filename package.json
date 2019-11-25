@@ -12,7 +12,7 @@
     "@ledgerhq/hw-app-eth": "^4.74.2",
     "@ledgerhq/hw-transport-node-hid": "^4.74.2",
     "bignumber.js": "^9.0.0",
-    "ethers": "^4.0.39",
+    "ethers": "^4.0.40",
     "lodash": "^4.17.15",
     "regenerator-runtime": "^0.13.3",
     "traverse": "^0.6.6"
